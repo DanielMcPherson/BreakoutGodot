@@ -327,9 +327,101 @@ position = Vector2( 928, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="Grey" type="Node2D" parent="Bricks" index="1"]
+[node name="Green" type="Node2D" parent="Bricks" index="1"]
 
 editor/display_folded = true
+modulate = Color( 0.204849, 0.699219, 0.247334, 1 )
+position = Vector2( 0, 192 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="BrickRedMid" parent="Bricks/Green" index="0" instance=ExtResource( 11 )]
+
+position = Vector2( 160, 176 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickRedMid2" parent="Bricks/Green" index="1" instance=ExtResource( 11 )]
+
+position = Vector2( 224, 176 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickRedMid3" parent="Bricks/Green" index="2" instance=ExtResource( 11 )]
+
+position = Vector2( 288, 176 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickRedMid4" parent="Bricks/Green" index="3" instance=ExtResource( 11 )]
+
+position = Vector2( 352, 176 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickRedMid5" parent="Bricks/Green" index="4" instance=ExtResource( 11 )]
+
+position = Vector2( 416, 176 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickRedMid6" parent="Bricks/Green" index="5" instance=ExtResource( 11 )]
+
+position = Vector2( 480, 176 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickRedMid7" parent="Bricks/Green" index="6" instance=ExtResource( 11 )]
+
+position = Vector2( 544, 176 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickRedMid8" parent="Bricks/Green" index="7" instance=ExtResource( 11 )]
+
+position = Vector2( 608, 176 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickRedMid9" parent="Bricks/Green" index="8" instance=ExtResource( 11 )]
+
+position = Vector2( 672, 176 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickRedMid10" parent="Bricks/Green" index="9" instance=ExtResource( 11 )]
+
+position = Vector2( 736, 176 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickRedMid11" parent="Bricks/Green" index="10" instance=ExtResource( 11 )]
+
+position = Vector2( 800, 176 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickRedMid12" parent="Bricks/Green" index="11" instance=ExtResource( 11 )]
+
+position = Vector2( 864, 176 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickRedLeft" parent="Bricks/Green" index="12" instance=ExtResource( 12 )]
+
+position = Vector2( 96, 176 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickRedRight" parent="Bricks/Green" index="13" instance=ExtResource( 13 )]
+
+position = Vector2( 928, 176 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Grey" type="Node2D" parent="Bricks" index="2"]
+
+editor/display_folded = true
+_sections_unfolded = [ "Visibility" ]
 
 [node name="BrickGreyLeft" parent="Bricks/Grey" index="0" instance=ExtResource( 14 )]
 
@@ -410,6 +502,97 @@ scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="BrickGreyMid12" parent="Bricks/Grey" index="13" instance=ExtResource( 16 )]
+
+position = Vector2( 864, 240 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Blue" type="Node2D" parent="Bricks" index="3"]
+
+editor/display_folded = true
+modulate = Color( 0.245361, 0.629282, 0.9375, 1 )
+position = Vector2( 0, 64 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="BrickGreyLeft" parent="Bricks/Blue" index="0" instance=ExtResource( 14 )]
+
+position = Vector2( 96, 240 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickGreyRight" parent="Bricks/Blue" index="1" instance=ExtResource( 15 )]
+
+position = Vector2( 928, 240 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickGreyMid" parent="Bricks/Blue" index="2" instance=ExtResource( 16 )]
+
+position = Vector2( 160, 240 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickGreyMid2" parent="Bricks/Blue" index="3" instance=ExtResource( 16 )]
+
+position = Vector2( 224, 240 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickGreyMid3" parent="Bricks/Blue" index="4" instance=ExtResource( 16 )]
+
+position = Vector2( 288, 240 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickGreyMid4" parent="Bricks/Blue" index="5" instance=ExtResource( 16 )]
+
+position = Vector2( 352, 240 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickGreyMid5" parent="Bricks/Blue" index="6" instance=ExtResource( 16 )]
+
+position = Vector2( 416, 240 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickGreyMid6" parent="Bricks/Blue" index="7" instance=ExtResource( 16 )]
+
+position = Vector2( 480, 240 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickGreyMid7" parent="Bricks/Blue" index="8" instance=ExtResource( 16 )]
+
+position = Vector2( 544, 240 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickGreyMid8" parent="Bricks/Blue" index="9" instance=ExtResource( 16 )]
+
+position = Vector2( 608, 240 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickGreyMid9" parent="Bricks/Blue" index="10" instance=ExtResource( 16 )]
+
+position = Vector2( 672, 240 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickGreyMid10" parent="Bricks/Blue" index="11" instance=ExtResource( 16 )]
+
+position = Vector2( 736, 240 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickGreyMid11" parent="Bricks/Blue" index="12" instance=ExtResource( 16 )]
+
+position = Vector2( 800, 240 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickGreyMid12" parent="Bricks/Blue" index="13" instance=ExtResource( 16 )]
 
 position = Vector2( 864, 240 )
 scale = Vector2( 0.25, 0.25 )
