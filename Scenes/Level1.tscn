@@ -192,7 +192,6 @@ position = Vector2( 3968, 3136 )
 
 position = Vector2( 496, 672 )
 scale = Vector2( 0.25, 0.25 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="Paddle" parent="." index="2" instance=ExtResource( 9 )]
 
