@@ -1,0 +1,186 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Walls/LeftWallTop.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Walls/TopWall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Walls/RightWallTop.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Walls/LeftWallMiddle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Walls/LeftWallBottom.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Walls/RightWallMiddle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Walls/RightWallBottom.tscn" type="PackedScene" id=7]
+
+[node name="Level1" type="Node2D" index="0"]
+
+[node name="Walls" type="Node2D" parent="." index="0"]
+
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LeftWallTop" parent="Walls" index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 128, 64 )
+
+[node name="TopWall" parent="Walls" index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 384, 64 )
+
+[node name="TopWall2" parent="Walls" index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 640, 64 )
+
+[node name="TopWall3" parent="Walls" index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 896, 64 )
+
+[node name="TopWall4" parent="Walls" index="4" instance=ExtResource( 2 )]
+
+position = Vector2( 1152, 64 )
+
+[node name="TopWall5" parent="Walls" index="5" instance=ExtResource( 2 )]
+
+position = Vector2( 1408, 64 )
+
+[node name="TopWall6" parent="Walls" index="6" instance=ExtResource( 2 )]
+
+position = Vector2( 1664, 64 )
+
+[node name="TopWall7" parent="Walls" index="7" instance=ExtResource( 2 )]
+
+position = Vector2( 1920, 64 )
+
+[node name="TopWall8" parent="Walls" index="8" instance=ExtResource( 2 )]
+
+position = Vector2( 2176, 64 )
+
+[node name="TopWall9" parent="Walls" index="9" instance=ExtResource( 2 )]
+
+position = Vector2( 2432, 64 )
+
+[node name="TopWall10" parent="Walls" index="10" instance=ExtResource( 2 )]
+
+position = Vector2( 2688, 64 )
+
+[node name="TopWall11" parent="Walls" index="11" instance=ExtResource( 2 )]
+
+position = Vector2( 2944, 64 )
+
+[node name="TopWall12" parent="Walls" index="12" instance=ExtResource( 2 )]
+
+position = Vector2( 3200, 64 )
+
+[node name="TopWall13" parent="Walls" index="13" instance=ExtResource( 2 )]
+
+position = Vector2( 3456, 64 )
+
+[node name="TopWall14" parent="Walls" index="14" instance=ExtResource( 2 )]
+
+position = Vector2( 3712, 64 )
+
+[node name="RightWallTop" parent="Walls" index="15" instance=ExtResource( 3 )]
+
+position = Vector2( 3968, 64 )
+
+[node name="LeftWallMiddle" parent="Walls" index="16" instance=ExtResource( 4 )]
+
+position = Vector2( 128, 320 )
+
+[node name="LeftWallMiddle2" parent="Walls" index="17" instance=ExtResource( 4 )]
+
+position = Vector2( 128, 576 )
+
+[node name="LeftWallMiddle3" parent="Walls" index="18" instance=ExtResource( 4 )]
+
+position = Vector2( 128, 832 )
+
+[node name="LeftWallMiddle4" parent="Walls" index="19" instance=ExtResource( 4 )]
+
+position = Vector2( 128, 1088 )
+
+[node name="LeftWallMiddle5" parent="Walls" index="20" instance=ExtResource( 4 )]
+
+position = Vector2( 128, 1344 )
+
+[node name="LeftWallMiddle6" parent="Walls" index="21" instance=ExtResource( 4 )]
+
+position = Vector2( 128, 1600 )
+
+[node name="LeftWallMiddle7" parent="Walls" index="22" instance=ExtResource( 4 )]
+
+position = Vector2( 128, 1856 )
+
+[node name="LeftWallMiddle9" parent="Walls" index="23" instance=ExtResource( 4 )]
+
+position = Vector2( 128, 2112 )
+
+[node name="LeftWallMiddle10" parent="Walls" index="24" instance=ExtResource( 4 )]
+
+position = Vector2( 128, 2112 )
+
+[node name="LeftWallMiddle11" parent="Walls" index="25" instance=ExtResource( 4 )]
+
+position = Vector2( 128, 2112 )
+
+[node name="LeftWallMiddle12" parent="Walls" index="26" instance=ExtResource( 4 )]
+
+position = Vector2( 128, 2368 )
+
+[node name="LeftWallMiddle13" parent="Walls" index="27" instance=ExtResource( 4 )]
+
+position = Vector2( 128, 2624 )
+
+[node name="LeftWallMiddle14" parent="Walls" index="28" instance=ExtResource( 4 )]
+
+position = Vector2( 128, 2880 )
+
+[node name="LeftWallBottom" parent="Walls" index="29" instance=ExtResource( 5 )]
+
+position = Vector2( 128, 3136 )
+
+[node name="RightWallMiddle" parent="Walls" index="30" instance=ExtResource( 6 )]
+
+position = Vector2( 3968, 320 )
+
+[node name="RightWallMiddle2" parent="Walls" index="31" instance=ExtResource( 6 )]
+
+position = Vector2( 3968, 576 )
+
+[node name="RightWallMiddle3" parent="Walls" index="32" instance=ExtResource( 6 )]
+
+position = Vector2( 3968, 832 )
+
+[node name="RightWallMiddle4" parent="Walls" index="33" instance=ExtResource( 6 )]
+
+position = Vector2( 3968, 1088 )
+
+[node name="RightWallMiddle5" parent="Walls" index="34" instance=ExtResource( 6 )]
+
+position = Vector2( 3968, 1344 )
+
+[node name="RightWallMiddle6" parent="Walls" index="35" instance=ExtResource( 6 )]
+
+position = Vector2( 3968, 1600 )
+
+[node name="RightWallMiddle7" parent="Walls" index="36" instance=ExtResource( 6 )]
+
+position = Vector2( 3968, 1856 )
+
+[node name="RightWallMiddle8" parent="Walls" index="37" instance=ExtResource( 6 )]
+
+position = Vector2( 3968, 2112 )
+
+[node name="RightWallMiddle9" parent="Walls" index="38" instance=ExtResource( 6 )]
+
+position = Vector2( 3968, 2368 )
+
+[node name="RightWallMiddle10" parent="Walls" index="39" instance=ExtResource( 6 )]
+
+position = Vector2( 3968, 2624 )
+
+[node name="RightWallMiddle11" parent="Walls" index="40" instance=ExtResource( 6 )]
+
+position = Vector2( 3968, 2880 )
+
+[node name="RightWallBottom" parent="Walls" index="41" instance=ExtResource( 7 )]
+
+position = Vector2( 3968, 3136 )
+
+
