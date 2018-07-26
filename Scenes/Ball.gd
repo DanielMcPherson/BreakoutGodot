@@ -5,7 +5,7 @@ const SPEED = 8
 var motion = Vector2()
 
 func _ready():
-	motion.y = -SPEED
+	motion.y = SPEED
 	motion.x = SPEED / 2
 
 
