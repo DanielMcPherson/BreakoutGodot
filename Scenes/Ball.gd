@@ -15,7 +15,7 @@ func _physics_process(delta):
 	if collision_info:
 		# Bounce off object we have collided with
 		motion = motion.bounce(collision_info.normal)
-		# See if the other object is a brick 
+		# See if the other object is a brick
 		var other = collision_info.collider
 		if "Brick" in other.get_name():
 			# Tell the brick it has been hit
