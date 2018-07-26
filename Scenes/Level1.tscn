@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Walls/LeftWallTop.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Walls/TopWall.tscn" type="PackedScene" id=2]
@@ -11,8 +11,10 @@
 [ext_resource path="res://Scenes/Paddle.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/BottomTestWall.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Bricks/BrickRedMid.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Bricks/BrickRedLeft.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Bricks/BrickRedRight.tscn" type="PackedScene" id=13]
 
-[node name="Level1" type="Node2D"]
+[node name="Level1" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -303,6 +305,18 @@ _sections_unfolded = [ "Collision", "Transform" ]
 [node name="BrickRedMid12" parent="Bricks" index="11" instance=ExtResource( 11 )]
 
 position = Vector2( 864, 176 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickRedLeft" parent="Bricks" index="12" instance=ExtResource( 12 )]
+
+position = Vector2( 96, 176 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BrickRedRight" parent="Bricks" index="13" instance=ExtResource( 13 )]
+
+position = Vector2( 928, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
