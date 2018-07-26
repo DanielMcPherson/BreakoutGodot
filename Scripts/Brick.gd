@@ -3,21 +3,30 @@ extends StaticBody2D
 var hits = 0
 const MAX_HITS = 2
 
+
 func _ready():
 	randomize()
 
+
+# Called from ball script when brick has been hit by a ball
 func hit():
 	hits += 1
 	if hits <= MAX_HITS:
+		# Show animation for current number of hits
 		$AnimatedSprite.play(str(hits))
 	else:
+		# Brick is completely destroyed
+		# Disable collider so we don't hit this brick again
 		$CollisionShape2D.disabled = true
 		# Choose between two die animations
 		var animation = "die1"
 		if randi() % 100 > 49:
 			animation = "die2"
 		$AnimatedSprite.play(animation)
+		# Call function to delete brick after die animation finishes
 		$AnimatedSprite.connect("animation_finished", self, "die_animation_finished")
 
+
+# Delete brick object after die animation has finished
 func die_animation_finished():
 	queue_free()
