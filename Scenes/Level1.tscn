@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Walls/LeftWallTop.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Walls/TopWall.tscn" type="PackedScene" id=2]
@@ -7,11 +7,16 @@
 [ext_resource path="res://Scenes/Walls/LeftWallBottom.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Walls/RightWallMiddle.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Walls/RightWallBottom.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Paddle.tscn" type="PackedScene" id=9]
 
-[node name="Level1" type="Node2D" index="0"]
+[node name="Level1" type="Node2D"]
+
+_sections_unfolded = [ "Transform" ]
 
 [node name="Walls" type="Node2D" parent="." index="0"]
 
+editor/display_folded = true
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Transform" ]
 
@@ -182,5 +187,17 @@ position = Vector2( 3968, 2880 )
 [node name="RightWallBottom" parent="Walls" index="41" instance=ExtResource( 7 )]
 
 position = Vector2( 3968, 3136 )
+
+[node name="Ball" parent="." index="1" instance=ExtResource( 8 )]
+
+position = Vector2( 496, 672 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paddle" parent="." index="2" instance=ExtResource( 9 )]
+
+position = Vector2( 496, 784 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Transform" ]
 
 
