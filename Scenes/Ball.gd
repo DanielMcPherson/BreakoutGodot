@@ -13,3 +13,6 @@ func _physics_process(delta):
 	var collision_info = move_and_collide(motion)
 	if collision_info:
 		motion = motion.bounce(collision_info.normal)
+		var other = collision_info.collider
+		if "Brick" in other.get_name():
+			other.hit()

@@ -1,0 +1,204 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Walls/BottomWall.tscn" type="PackedScene" id=1]
+
+[node name="BottomTestWall" type="Node2D"]
+
+editor/display_folded = true
+
+[node name="BottomWall" type="StaticBody2D" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 80, 848 )
+scale = Vector2( 0.25, 0.25 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="BottomWall2" type="StaticBody2D" parent="." index="1" instance=ExtResource( 1 )]
+
+position = Vector2( 144, 848 )
+scale = Vector2( 0.25, 0.25 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="BottomWall3" type="StaticBody2D" parent="." index="2" instance=ExtResource( 1 )]
+
+position = Vector2( 208, 848 )
+scale = Vector2( 0.25, 0.25 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="BottomWall4" type="StaticBody2D" parent="." index="3" instance=ExtResource( 1 )]
+
+position = Vector2( 272, 848 )
+scale = Vector2( 0.25, 0.25 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="BottomWall5" type="StaticBody2D" parent="." index="4" instance=ExtResource( 1 )]
+
+position = Vector2( 336, 848 )
+scale = Vector2( 0.25, 0.25 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="BottomWall6" type="StaticBody2D" parent="." index="5" instance=ExtResource( 1 )]
+
+position = Vector2( 400, 848 )
+scale = Vector2( 0.25, 0.25 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="BottomWall7" type="StaticBody2D" parent="." index="6" instance=ExtResource( 1 )]
+
+position = Vector2( 464, 848 )
+scale = Vector2( 0.25, 0.25 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="BottomWall8" type="StaticBody2D" parent="." index="7" instance=ExtResource( 1 )]
+
+position = Vector2( 528, 848 )
+scale = Vector2( 0.25, 0.25 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="BottomWall9" type="StaticBody2D" parent="." index="8" instance=ExtResource( 1 )]
+
+position = Vector2( 592, 848 )
+scale = Vector2( 0.25, 0.25 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="BottomWall10" type="StaticBody2D" parent="." index="9" instance=ExtResource( 1 )]
+
+position = Vector2( 656, 848 )
+scale = Vector2( 0.25, 0.25 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="BottomWall11" type="StaticBody2D" parent="." index="10" instance=ExtResource( 1 )]
+
+position = Vector2( 720, 848 )
+scale = Vector2( 0.25, 0.25 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="BottomWall12" type="StaticBody2D" parent="." index="11" instance=ExtResource( 1 )]
+
+position = Vector2( 784, 848 )
+scale = Vector2( 0.25, 0.25 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="BottomWall13" type="StaticBody2D" parent="." index="12" instance=ExtResource( 1 )]
+
+position = Vector2( 848, 848 )
+scale = Vector2( 0.25, 0.25 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="BottomWall14" type="StaticBody2D" parent="." index="13" instance=ExtResource( 1 )]
+
+position = Vector2( 912, 848 )
+scale = Vector2( 0.25, 0.25 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="BottomWall15" type="StaticBody2D" parent="." index="14" instance=ExtResource( 1 )]
+
+position = Vector2( 976, 848 )
+scale = Vector2( 0.25, 0.25 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+
