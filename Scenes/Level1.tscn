@@ -17,7 +17,7 @@
 [ext_resource path="res://Scenes/Bricks/BrickGreyRight.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Bricks/BrickGreyMid.tscn" type="PackedScene" id=16]
 
-[node name="Level1" type="Node2D" index="0"]
+[node name="Level1" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -224,7 +224,7 @@ collision_layer = 1
 
 [node name="Ball" parent="." index="1" instance=ExtResource( 8 )]
 
-position = Vector2( 496, 672 )
+position = Vector2( 500, 650 )
 scale = Vector2( 0.25, 0.25 )
 
 [node name="Paddle" parent="." index="2" instance=ExtResource( 9 )]

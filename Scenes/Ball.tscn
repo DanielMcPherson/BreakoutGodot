@@ -1,7 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Ball.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Balls/red/expresionless.png" type="Texture" id=2]
+[ext_resource path="res://GFX/Balls/red/smile_big.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Balls/red/angry.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Balls/red/confused.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Balls/red/surprised.png" type="Texture" id=6]
+[ext_resource path="res://GFX/Balls/red/smile.png" type="Texture" id=7]
+[ext_resource path="res://GFX/Balls/red/ashamed.png" type="Texture" id=8]
+[ext_resource path="res://GFX/Balls/red/expresionless_blink.png" type="Texture" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -9,6 +16,41 @@ animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "big_smile",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "angry",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "confused",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "worried",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "smile",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "ashamed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "blink",
 "speed": 5.0
 } ]
 
