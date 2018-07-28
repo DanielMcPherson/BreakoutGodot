@@ -1,24 +1,27 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://Scenes/Walls/LeftWallTop.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Walls/TopWall.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Walls/RightWallTop.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Walls/LeftWallMiddle.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Walls/LeftWallBottom.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Walls/RightWallMiddle.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Walls/RightWallBottom.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Paddle.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/BottomTestWall.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Bricks/BrickRedMid.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Bricks/BrickRedLeft.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Bricks/BrickRedRight.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Bricks/BrickGreyLeft.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Bricks/BrickGreyRight.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Bricks/BrickGreyMid.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Level.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Walls/LeftWallTop.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Walls/TopWall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Walls/RightWallTop.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Walls/LeftWallMiddle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Walls/LeftWallBottom.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Walls/RightWallMiddle.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Walls/RightWallBottom.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Paddle.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Eyes.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/BottomTestWall.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Bricks/BrickRedMid.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Bricks/BrickRedLeft.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Bricks/BrickRedRight.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Bricks/BrickGreyLeft.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Bricks/BrickGreyRight.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Bricks/BrickGreyMid.tscn" type="PackedScene" id=18]
 
-[node name="Level1" type="Node2D"]
+[node name="Level1" type="Node2D" index="0"]
 
+script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Walls" type="Node2D" parent="." index="0"]
@@ -27,213 +30,218 @@ editor/display_folded = true
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="LeftWallTop" parent="Walls" index="0" instance=ExtResource( 1 )]
+[node name="LeftWallTop" parent="Walls" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 128, 64 )
 
-[node name="TopWall" parent="Walls" index="1" instance=ExtResource( 2 )]
+[node name="TopWall" parent="Walls" index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 384, 64 )
 
-[node name="TopWall2" parent="Walls" index="2" instance=ExtResource( 2 )]
+[node name="TopWall2" parent="Walls" index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 640, 64 )
 
-[node name="TopWall3" parent="Walls" index="3" instance=ExtResource( 2 )]
+[node name="TopWall3" parent="Walls" index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 896, 64 )
 
-[node name="TopWall4" parent="Walls" index="4" instance=ExtResource( 2 )]
+[node name="TopWall4" parent="Walls" index="4" instance=ExtResource( 3 )]
 
 position = Vector2( 1152, 64 )
 
-[node name="TopWall5" parent="Walls" index="5" instance=ExtResource( 2 )]
+[node name="TopWall5" parent="Walls" index="5" instance=ExtResource( 3 )]
 
 position = Vector2( 1408, 64 )
 
-[node name="TopWall6" parent="Walls" index="6" instance=ExtResource( 2 )]
+[node name="TopWall6" parent="Walls" index="6" instance=ExtResource( 3 )]
 
 position = Vector2( 1664, 64 )
 
-[node name="TopWall7" parent="Walls" index="7" instance=ExtResource( 2 )]
+[node name="TopWall7" parent="Walls" index="7" instance=ExtResource( 3 )]
 
 position = Vector2( 1920, 64 )
 
-[node name="TopWall8" parent="Walls" index="8" instance=ExtResource( 2 )]
+[node name="TopWall8" parent="Walls" index="8" instance=ExtResource( 3 )]
 
 position = Vector2( 2176, 64 )
 
-[node name="TopWall9" parent="Walls" index="9" instance=ExtResource( 2 )]
+[node name="TopWall9" parent="Walls" index="9" instance=ExtResource( 3 )]
 
 position = Vector2( 2432, 64 )
 
-[node name="TopWall10" parent="Walls" index="10" instance=ExtResource( 2 )]
+[node name="TopWall10" parent="Walls" index="10" instance=ExtResource( 3 )]
 
 position = Vector2( 2688, 64 )
 
-[node name="TopWall11" parent="Walls" index="11" instance=ExtResource( 2 )]
+[node name="TopWall11" parent="Walls" index="11" instance=ExtResource( 3 )]
 
 position = Vector2( 2944, 64 )
 
-[node name="TopWall12" parent="Walls" index="12" instance=ExtResource( 2 )]
+[node name="TopWall12" parent="Walls" index="12" instance=ExtResource( 3 )]
 
 position = Vector2( 3200, 64 )
 
-[node name="TopWall13" parent="Walls" index="13" instance=ExtResource( 2 )]
+[node name="TopWall13" parent="Walls" index="13" instance=ExtResource( 3 )]
 
 position = Vector2( 3456, 64 )
 
-[node name="TopWall14" parent="Walls" index="14" instance=ExtResource( 2 )]
+[node name="TopWall14" parent="Walls" index="14" instance=ExtResource( 3 )]
 
 position = Vector2( 3712, 64 )
 
-[node name="RightWallTop" parent="Walls" index="15" instance=ExtResource( 3 )]
+[node name="RightWallTop" parent="Walls" index="15" instance=ExtResource( 4 )]
 
 position = Vector2( 3968, 64 )
 collision_layer = 1
 
-[node name="LeftWallMiddle" parent="Walls" index="16" instance=ExtResource( 4 )]
+[node name="LeftWallMiddle" parent="Walls" index="16" instance=ExtResource( 5 )]
 
 position = Vector2( 128, 320 )
 collision_layer = 1
 
-[node name="LeftWallMiddle2" parent="Walls" index="17" instance=ExtResource( 4 )]
+[node name="LeftWallMiddle2" parent="Walls" index="17" instance=ExtResource( 5 )]
 
 position = Vector2( 128, 576 )
 collision_layer = 1
 
-[node name="LeftWallMiddle3" parent="Walls" index="18" instance=ExtResource( 4 )]
+[node name="LeftWallMiddle3" parent="Walls" index="18" instance=ExtResource( 5 )]
 
 position = Vector2( 128, 832 )
 collision_layer = 1
 
-[node name="LeftWallMiddle4" parent="Walls" index="19" instance=ExtResource( 4 )]
+[node name="LeftWallMiddle4" parent="Walls" index="19" instance=ExtResource( 5 )]
 
 position = Vector2( 128, 1088 )
 collision_layer = 1
 
-[node name="LeftWallMiddle5" parent="Walls" index="20" instance=ExtResource( 4 )]
+[node name="LeftWallMiddle5" parent="Walls" index="20" instance=ExtResource( 5 )]
 
 position = Vector2( 128, 1344 )
 collision_layer = 1
 
-[node name="LeftWallMiddle6" parent="Walls" index="21" instance=ExtResource( 4 )]
+[node name="LeftWallMiddle6" parent="Walls" index="21" instance=ExtResource( 5 )]
 
 position = Vector2( 128, 1600 )
 collision_layer = 1
 
-[node name="LeftWallMiddle7" parent="Walls" index="22" instance=ExtResource( 4 )]
+[node name="LeftWallMiddle7" parent="Walls" index="22" instance=ExtResource( 5 )]
 
 position = Vector2( 128, 1856 )
 collision_layer = 1
 
-[node name="LeftWallMiddle9" parent="Walls" index="23" instance=ExtResource( 4 )]
+[node name="LeftWallMiddle9" parent="Walls" index="23" instance=ExtResource( 5 )]
 
 position = Vector2( 128, 2112 )
 collision_layer = 1
 
-[node name="LeftWallMiddle10" parent="Walls" index="24" instance=ExtResource( 4 )]
+[node name="LeftWallMiddle10" parent="Walls" index="24" instance=ExtResource( 5 )]
 
 position = Vector2( 128, 2112 )
 collision_layer = 1
 
-[node name="LeftWallMiddle11" parent="Walls" index="25" instance=ExtResource( 4 )]
+[node name="LeftWallMiddle11" parent="Walls" index="25" instance=ExtResource( 5 )]
 
 position = Vector2( 128, 2112 )
 collision_layer = 1
 
-[node name="LeftWallMiddle12" parent="Walls" index="26" instance=ExtResource( 4 )]
+[node name="LeftWallMiddle12" parent="Walls" index="26" instance=ExtResource( 5 )]
 
 position = Vector2( 128, 2368 )
 collision_layer = 1
 
-[node name="LeftWallMiddle13" parent="Walls" index="27" instance=ExtResource( 4 )]
+[node name="LeftWallMiddle13" parent="Walls" index="27" instance=ExtResource( 5 )]
 
 position = Vector2( 128, 2624 )
 collision_layer = 1
 
-[node name="LeftWallMiddle14" parent="Walls" index="28" instance=ExtResource( 4 )]
+[node name="LeftWallMiddle14" parent="Walls" index="28" instance=ExtResource( 5 )]
 
 position = Vector2( 128, 2880 )
 collision_layer = 1
 
-[node name="LeftWallBottom" parent="Walls" index="29" instance=ExtResource( 5 )]
+[node name="LeftWallBottom" parent="Walls" index="29" instance=ExtResource( 6 )]
 
 position = Vector2( 128, 3136 )
 collision_layer = 1
 
-[node name="RightWallMiddle" parent="Walls" index="30" instance=ExtResource( 6 )]
+[node name="RightWallMiddle" parent="Walls" index="30" instance=ExtResource( 7 )]
 
 position = Vector2( 3968, 320 )
 collision_layer = 1
 
-[node name="RightWallMiddle2" parent="Walls" index="31" instance=ExtResource( 6 )]
+[node name="RightWallMiddle2" parent="Walls" index="31" instance=ExtResource( 7 )]
 
 position = Vector2( 3968, 576 )
 collision_layer = 1
 
-[node name="RightWallMiddle3" parent="Walls" index="32" instance=ExtResource( 6 )]
+[node name="RightWallMiddle3" parent="Walls" index="32" instance=ExtResource( 7 )]
 
 position = Vector2( 3968, 832 )
 collision_layer = 1
 
-[node name="RightWallMiddle4" parent="Walls" index="33" instance=ExtResource( 6 )]
+[node name="RightWallMiddle4" parent="Walls" index="33" instance=ExtResource( 7 )]
 
 position = Vector2( 3968, 1088 )
 collision_layer = 1
 
-[node name="RightWallMiddle5" parent="Walls" index="34" instance=ExtResource( 6 )]
+[node name="RightWallMiddle5" parent="Walls" index="34" instance=ExtResource( 7 )]
 
 position = Vector2( 3968, 1344 )
 collision_layer = 1
 
-[node name="RightWallMiddle6" parent="Walls" index="35" instance=ExtResource( 6 )]
+[node name="RightWallMiddle6" parent="Walls" index="35" instance=ExtResource( 7 )]
 
 position = Vector2( 3968, 1600 )
 collision_layer = 1
 
-[node name="RightWallMiddle7" parent="Walls" index="36" instance=ExtResource( 6 )]
+[node name="RightWallMiddle7" parent="Walls" index="36" instance=ExtResource( 7 )]
 
 position = Vector2( 3968, 1856 )
 collision_layer = 1
 
-[node name="RightWallMiddle8" parent="Walls" index="37" instance=ExtResource( 6 )]
+[node name="RightWallMiddle8" parent="Walls" index="37" instance=ExtResource( 7 )]
 
 position = Vector2( 3968, 2112 )
 collision_layer = 1
 
-[node name="RightWallMiddle9" parent="Walls" index="38" instance=ExtResource( 6 )]
+[node name="RightWallMiddle9" parent="Walls" index="38" instance=ExtResource( 7 )]
 
 position = Vector2( 3968, 2368 )
 collision_layer = 1
 
-[node name="RightWallMiddle10" parent="Walls" index="39" instance=ExtResource( 6 )]
+[node name="RightWallMiddle10" parent="Walls" index="39" instance=ExtResource( 7 )]
 
 position = Vector2( 3968, 2624 )
 collision_layer = 1
 
-[node name="RightWallMiddle11" parent="Walls" index="40" instance=ExtResource( 6 )]
+[node name="RightWallMiddle11" parent="Walls" index="40" instance=ExtResource( 7 )]
 
 position = Vector2( 3968, 2880 )
 collision_layer = 1
 
-[node name="RightWallBottom" parent="Walls" index="41" instance=ExtResource( 7 )]
+[node name="RightWallBottom" parent="Walls" index="41" instance=ExtResource( 8 )]
 
 position = Vector2( 3968, 3136 )
 collision_layer = 1
 
-[node name="Ball" parent="." index="1" instance=ExtResource( 8 )]
+[node name="Ball" parent="." index="1" instance=ExtResource( 9 )]
 
 position = Vector2( 500, 650 )
 scale = Vector2( 0.25, 0.25 )
 
-[node name="Paddle" parent="." index="2" instance=ExtResource( 9 )]
+[node name="Paddle" parent="." index="2" instance=ExtResource( 10 )]
 
 position = Vector2( 496, 784 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="BottomTestWall" parent="." index="3" instance=ExtResource( 10 )]
+[node name="Eyes" parent="Paddle" index="3" instance=ExtResource( 11 )]
+
+position = Vector2( 0, -40 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="BottomTestWall" parent="." index="3" instance=ExtResource( 12 )]
 
 position = Vector2( -16, 0 )
 
@@ -243,85 +251,85 @@ position = Vector2( -16, 0 )
 
 editor/display_folded = true
 
-[node name="BrickRedMid" parent="Bricks/Red" index="0" instance=ExtResource( 11 )]
+[node name="BrickRedMid" parent="Bricks/Red" index="0" instance=ExtResource( 13 )]
 
 position = Vector2( 160, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid2" parent="Bricks/Red" index="1" instance=ExtResource( 11 )]
+[node name="BrickRedMid2" parent="Bricks/Red" index="1" instance=ExtResource( 13 )]
 
 position = Vector2( 224, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid3" parent="Bricks/Red" index="2" instance=ExtResource( 11 )]
+[node name="BrickRedMid3" parent="Bricks/Red" index="2" instance=ExtResource( 13 )]
 
 position = Vector2( 288, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid4" parent="Bricks/Red" index="3" instance=ExtResource( 11 )]
+[node name="BrickRedMid4" parent="Bricks/Red" index="3" instance=ExtResource( 13 )]
 
 position = Vector2( 352, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid5" parent="Bricks/Red" index="4" instance=ExtResource( 11 )]
+[node name="BrickRedMid5" parent="Bricks/Red" index="4" instance=ExtResource( 13 )]
 
 position = Vector2( 416, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid6" parent="Bricks/Red" index="5" instance=ExtResource( 11 )]
+[node name="BrickRedMid6" parent="Bricks/Red" index="5" instance=ExtResource( 13 )]
 
 position = Vector2( 480, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid7" parent="Bricks/Red" index="6" instance=ExtResource( 11 )]
+[node name="BrickRedMid7" parent="Bricks/Red" index="6" instance=ExtResource( 13 )]
 
 position = Vector2( 544, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid8" parent="Bricks/Red" index="7" instance=ExtResource( 11 )]
+[node name="BrickRedMid8" parent="Bricks/Red" index="7" instance=ExtResource( 13 )]
 
 position = Vector2( 608, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid9" parent="Bricks/Red" index="8" instance=ExtResource( 11 )]
+[node name="BrickRedMid9" parent="Bricks/Red" index="8" instance=ExtResource( 13 )]
 
 position = Vector2( 672, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid10" parent="Bricks/Red" index="9" instance=ExtResource( 11 )]
+[node name="BrickRedMid10" parent="Bricks/Red" index="9" instance=ExtResource( 13 )]
 
 position = Vector2( 736, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid11" parent="Bricks/Red" index="10" instance=ExtResource( 11 )]
+[node name="BrickRedMid11" parent="Bricks/Red" index="10" instance=ExtResource( 13 )]
 
 position = Vector2( 800, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid12" parent="Bricks/Red" index="11" instance=ExtResource( 11 )]
+[node name="BrickRedMid12" parent="Bricks/Red" index="11" instance=ExtResource( 13 )]
 
 position = Vector2( 864, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedLeft" parent="Bricks/Red" index="12" instance=ExtResource( 12 )]
+[node name="BrickRedLeft" parent="Bricks/Red" index="12" instance=ExtResource( 14 )]
 
 position = Vector2( 96, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedRight" parent="Bricks/Red" index="13" instance=ExtResource( 13 )]
+[node name="BrickRedRight" parent="Bricks/Red" index="13" instance=ExtResource( 15 )]
 
 position = Vector2( 928, 176 )
 scale = Vector2( 0.25, 0.25 )
@@ -334,85 +342,85 @@ modulate = Color( 0.204849, 0.699219, 0.247334, 1 )
 position = Vector2( 0, 192 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="BrickRedMid" parent="Bricks/Green" index="0" instance=ExtResource( 11 )]
+[node name="BrickRedMid" parent="Bricks/Green" index="0" instance=ExtResource( 13 )]
 
 position = Vector2( 160, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid2" parent="Bricks/Green" index="1" instance=ExtResource( 11 )]
+[node name="BrickRedMid2" parent="Bricks/Green" index="1" instance=ExtResource( 13 )]
 
 position = Vector2( 224, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid3" parent="Bricks/Green" index="2" instance=ExtResource( 11 )]
+[node name="BrickRedMid3" parent="Bricks/Green" index="2" instance=ExtResource( 13 )]
 
 position = Vector2( 288, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid4" parent="Bricks/Green" index="3" instance=ExtResource( 11 )]
+[node name="BrickRedMid4" parent="Bricks/Green" index="3" instance=ExtResource( 13 )]
 
 position = Vector2( 352, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid5" parent="Bricks/Green" index="4" instance=ExtResource( 11 )]
+[node name="BrickRedMid5" parent="Bricks/Green" index="4" instance=ExtResource( 13 )]
 
 position = Vector2( 416, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid6" parent="Bricks/Green" index="5" instance=ExtResource( 11 )]
+[node name="BrickRedMid6" parent="Bricks/Green" index="5" instance=ExtResource( 13 )]
 
 position = Vector2( 480, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid7" parent="Bricks/Green" index="6" instance=ExtResource( 11 )]
+[node name="BrickRedMid7" parent="Bricks/Green" index="6" instance=ExtResource( 13 )]
 
 position = Vector2( 544, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid8" parent="Bricks/Green" index="7" instance=ExtResource( 11 )]
+[node name="BrickRedMid8" parent="Bricks/Green" index="7" instance=ExtResource( 13 )]
 
 position = Vector2( 608, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid9" parent="Bricks/Green" index="8" instance=ExtResource( 11 )]
+[node name="BrickRedMid9" parent="Bricks/Green" index="8" instance=ExtResource( 13 )]
 
 position = Vector2( 672, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid10" parent="Bricks/Green" index="9" instance=ExtResource( 11 )]
+[node name="BrickRedMid10" parent="Bricks/Green" index="9" instance=ExtResource( 13 )]
 
 position = Vector2( 736, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid11" parent="Bricks/Green" index="10" instance=ExtResource( 11 )]
+[node name="BrickRedMid11" parent="Bricks/Green" index="10" instance=ExtResource( 13 )]
 
 position = Vector2( 800, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedMid12" parent="Bricks/Green" index="11" instance=ExtResource( 11 )]
+[node name="BrickRedMid12" parent="Bricks/Green" index="11" instance=ExtResource( 13 )]
 
 position = Vector2( 864, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedLeft" parent="Bricks/Green" index="12" instance=ExtResource( 12 )]
+[node name="BrickRedLeft" parent="Bricks/Green" index="12" instance=ExtResource( 14 )]
 
 position = Vector2( 96, 176 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickRedRight" parent="Bricks/Green" index="13" instance=ExtResource( 13 )]
+[node name="BrickRedRight" parent="Bricks/Green" index="13" instance=ExtResource( 15 )]
 
 position = Vector2( 928, 176 )
 scale = Vector2( 0.25, 0.25 )
@@ -423,85 +431,85 @@ _sections_unfolded = [ "Collision", "Transform" ]
 editor/display_folded = true
 _sections_unfolded = [ "Visibility" ]
 
-[node name="BrickGreyLeft" parent="Bricks/Grey" index="0" instance=ExtResource( 14 )]
+[node name="BrickGreyLeft" parent="Bricks/Grey" index="0" instance=ExtResource( 16 )]
 
 position = Vector2( 96, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyRight" parent="Bricks/Grey" index="1" instance=ExtResource( 15 )]
+[node name="BrickGreyRight" parent="Bricks/Grey" index="1" instance=ExtResource( 17 )]
 
 position = Vector2( 928, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid" parent="Bricks/Grey" index="2" instance=ExtResource( 16 )]
+[node name="BrickGreyMid" parent="Bricks/Grey" index="2" instance=ExtResource( 18 )]
 
 position = Vector2( 160, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid2" parent="Bricks/Grey" index="3" instance=ExtResource( 16 )]
+[node name="BrickGreyMid2" parent="Bricks/Grey" index="3" instance=ExtResource( 18 )]
 
 position = Vector2( 224, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid3" parent="Bricks/Grey" index="4" instance=ExtResource( 16 )]
+[node name="BrickGreyMid3" parent="Bricks/Grey" index="4" instance=ExtResource( 18 )]
 
 position = Vector2( 288, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid4" parent="Bricks/Grey" index="5" instance=ExtResource( 16 )]
+[node name="BrickGreyMid4" parent="Bricks/Grey" index="5" instance=ExtResource( 18 )]
 
 position = Vector2( 352, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid5" parent="Bricks/Grey" index="6" instance=ExtResource( 16 )]
+[node name="BrickGreyMid5" parent="Bricks/Grey" index="6" instance=ExtResource( 18 )]
 
 position = Vector2( 416, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid6" parent="Bricks/Grey" index="7" instance=ExtResource( 16 )]
+[node name="BrickGreyMid6" parent="Bricks/Grey" index="7" instance=ExtResource( 18 )]
 
 position = Vector2( 480, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid7" parent="Bricks/Grey" index="8" instance=ExtResource( 16 )]
+[node name="BrickGreyMid7" parent="Bricks/Grey" index="8" instance=ExtResource( 18 )]
 
 position = Vector2( 544, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid8" parent="Bricks/Grey" index="9" instance=ExtResource( 16 )]
+[node name="BrickGreyMid8" parent="Bricks/Grey" index="9" instance=ExtResource( 18 )]
 
 position = Vector2( 608, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid9" parent="Bricks/Grey" index="10" instance=ExtResource( 16 )]
+[node name="BrickGreyMid9" parent="Bricks/Grey" index="10" instance=ExtResource( 18 )]
 
 position = Vector2( 672, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid10" parent="Bricks/Grey" index="11" instance=ExtResource( 16 )]
+[node name="BrickGreyMid10" parent="Bricks/Grey" index="11" instance=ExtResource( 18 )]
 
 position = Vector2( 736, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid11" parent="Bricks/Grey" index="12" instance=ExtResource( 16 )]
+[node name="BrickGreyMid11" parent="Bricks/Grey" index="12" instance=ExtResource( 18 )]
 
 position = Vector2( 800, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid12" parent="Bricks/Grey" index="13" instance=ExtResource( 16 )]
+[node name="BrickGreyMid12" parent="Bricks/Grey" index="13" instance=ExtResource( 18 )]
 
 position = Vector2( 864, 240 )
 scale = Vector2( 0.25, 0.25 )
@@ -514,85 +522,85 @@ modulate = Color( 0.245361, 0.629282, 0.9375, 1 )
 position = Vector2( 0, 64 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="BrickGreyLeft" parent="Bricks/Blue" index="0" instance=ExtResource( 14 )]
+[node name="BrickGreyLeft" parent="Bricks/Blue" index="0" instance=ExtResource( 16 )]
 
 position = Vector2( 96, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyRight" parent="Bricks/Blue" index="1" instance=ExtResource( 15 )]
+[node name="BrickGreyRight" parent="Bricks/Blue" index="1" instance=ExtResource( 17 )]
 
 position = Vector2( 928, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid" parent="Bricks/Blue" index="2" instance=ExtResource( 16 )]
+[node name="BrickGreyMid" parent="Bricks/Blue" index="2" instance=ExtResource( 18 )]
 
 position = Vector2( 160, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid2" parent="Bricks/Blue" index="3" instance=ExtResource( 16 )]
+[node name="BrickGreyMid2" parent="Bricks/Blue" index="3" instance=ExtResource( 18 )]
 
 position = Vector2( 224, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid3" parent="Bricks/Blue" index="4" instance=ExtResource( 16 )]
+[node name="BrickGreyMid3" parent="Bricks/Blue" index="4" instance=ExtResource( 18 )]
 
 position = Vector2( 288, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid4" parent="Bricks/Blue" index="5" instance=ExtResource( 16 )]
+[node name="BrickGreyMid4" parent="Bricks/Blue" index="5" instance=ExtResource( 18 )]
 
 position = Vector2( 352, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid5" parent="Bricks/Blue" index="6" instance=ExtResource( 16 )]
+[node name="BrickGreyMid5" parent="Bricks/Blue" index="6" instance=ExtResource( 18 )]
 
 position = Vector2( 416, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid6" parent="Bricks/Blue" index="7" instance=ExtResource( 16 )]
+[node name="BrickGreyMid6" parent="Bricks/Blue" index="7" instance=ExtResource( 18 )]
 
 position = Vector2( 480, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid7" parent="Bricks/Blue" index="8" instance=ExtResource( 16 )]
+[node name="BrickGreyMid7" parent="Bricks/Blue" index="8" instance=ExtResource( 18 )]
 
 position = Vector2( 544, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid8" parent="Bricks/Blue" index="9" instance=ExtResource( 16 )]
+[node name="BrickGreyMid8" parent="Bricks/Blue" index="9" instance=ExtResource( 18 )]
 
 position = Vector2( 608, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid9" parent="Bricks/Blue" index="10" instance=ExtResource( 16 )]
+[node name="BrickGreyMid9" parent="Bricks/Blue" index="10" instance=ExtResource( 18 )]
 
 position = Vector2( 672, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid10" parent="Bricks/Blue" index="11" instance=ExtResource( 16 )]
+[node name="BrickGreyMid10" parent="Bricks/Blue" index="11" instance=ExtResource( 18 )]
 
 position = Vector2( 736, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid11" parent="Bricks/Blue" index="12" instance=ExtResource( 16 )]
+[node name="BrickGreyMid11" parent="Bricks/Blue" index="12" instance=ExtResource( 18 )]
 
 position = Vector2( 800, 240 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BrickGreyMid12" parent="Bricks/Blue" index="13" instance=ExtResource( 16 )]
+[node name="BrickGreyMid12" parent="Bricks/Blue" index="13" instance=ExtResource( 18 )]
 
 position = Vector2( 864, 240 )
 scale = Vector2( 0.25, 0.25 )

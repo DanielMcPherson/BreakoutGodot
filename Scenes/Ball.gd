@@ -23,16 +23,17 @@ func _physics_process(delta):
 			# Ball is happy about it
 			if other.position.y < position.y:
 				# Big smile when hitting ball from below
-				$AnimatedSprite.play("big_smile")
+				$AnimatedSprite.play("smile")
 			else:
 				# Murderous glee when hitting ball from above
 				$AnimatedSprite.play("angry")
 		elif "Paddle" in other.get_name():
 			# Ball is happy
-			$AnimatedSprite.play("smile")
+			$AnimatedSprite.play("default")
 	# Ball gets nervouse when falling down
 	if motion.y > 0:
-		if position.y > 620:
+		# ToDo: Look worried if ball is below 650 and paddle is not close enough
+		if position.y > 710:
 			$AnimatedSprite.play("worried")
 	if motion.y < 0 and position.y > 550:
 		$AnimatedSprite.play("default")

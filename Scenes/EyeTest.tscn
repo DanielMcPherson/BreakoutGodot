@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/EyeTest.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/TestBall.gd" type="Script" id=2]
+[ext_resource path="res://GFX/Balls/red/expresionless_blink.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Eyes.tscn" type="PackedScene" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 128.0
+
+[node name="EyeTest" type="Node2D"]
+
+script = ExtResource( 1 )
+
+[node name="Ball" type="KinematicBody2D" parent="." index="0"]
+
+scale = Vector2( 0.25, 0.25 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="Ball" index="0"]
+
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" index="1"]
+
+visible = false
+shape = SubResource( 1 )
+
+[node name="EyeParent" type="Node2D" parent="." index="1"]
+
+position = Vector2( 514.689, 467.526 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Eyes" parent="EyeParent" index="0" instance=ExtResource( 4 )]
+
+
