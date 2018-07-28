@@ -2,12 +2,16 @@ extends KinematicBody2D
 
 const SPEED = 8
 
-var motion = Vector2()
-
+export var motion = Vector2()
+var paddle
 
 func _ready():
 	motion.y = SPEED
 	motion.x = SPEED / 2
+
+
+func set_paddle(obj):
+	paddle = obj
 
 
 func _physics_process(delta):
@@ -22,8 +26,13 @@ func _physics_process(delta):
 			other.hit()
 			# Ball is happy about it
 			if other.position.y < position.y:
-				# Big smile when hitting ball from below
-				$AnimatedSprite.play("smile")
+				# Smile when hitting ball from below
+				if other.dead:
+					$AnimatedSprite.play("big_smile")
+					if paddle:
+						paddle.brick_smashed()
+				else:
+					$AnimatedSprite.play("smile")
 			else:
 				# Murderous glee when hitting ball from above
 				$AnimatedSprite.play("angry")

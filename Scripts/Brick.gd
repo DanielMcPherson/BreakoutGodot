@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 var hits = 0
+export var dead = false
 const MAX_HITS = 2
 
 
@@ -15,6 +16,7 @@ func hit():
 		# Show animation for current number of hits
 		$AnimatedSprite.play(str(hits))
 	else:
+		dead = true
 		# Brick is completely destroyed
 		# Disable collider so we don't hit this brick again
 		$CollisionShape2D.disabled = true

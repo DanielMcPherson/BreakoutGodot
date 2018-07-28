@@ -1,13 +1,47 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Paddle.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Walls/yellow_brown/platform_left_edge.png" type="Texture" id=2]
 [ext_resource path="res://GFX/Walls/yellow_brown/platform_right_edge.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Faces/smile_big_mouth.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Faces/angry_mouth.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Faces/surprised_mouth.png" type="Texture" id=6]
+[ext_resource path="res://GFX/Faces/smile_mouth.png" type="Texture" id=7]
+[ext_resource path="res://GFX/Faces/frown_mouth.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 240, 96 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "big_smile",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "angry",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "worried",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "smile",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "frown",
+"speed": 5.0
+} ]
 
 [node name="Paddle" type="KinematicBody2D"]
 
@@ -34,5 +68,11 @@ _sections_unfolded = [ "Offset" ]
 visible = false
 position = Vector2( 0, -32 )
 shape = SubResource( 1 )
+
+[node name="Mouth" type="AnimatedSprite" parent="." index="3"]
+
+position = Vector2( 0, -16 )
+frames = SubResource( 2 )
+animation = "smile"
 
 

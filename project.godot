@@ -16,7 +16,7 @@ config/icon="res://icon.png"
 
 [display]
 
-window/size/height=800
+window/size/height=900
 
 [layer_names]
 
