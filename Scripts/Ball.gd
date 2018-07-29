@@ -55,3 +55,6 @@ func _physics_process(delta):
 	# Ball is confused if not moving up and down fast enough
 	if abs(motion.y) < 3:
 		$AnimatedSprite.play("confused")
+	# Make sure ball doesn't get stuck only moving horizontally
+	if abs(motion.y) < 2:
+		motion.y *= 1.1
