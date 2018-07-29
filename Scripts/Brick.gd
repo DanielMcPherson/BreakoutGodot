@@ -27,6 +27,7 @@ func hit():
 	if hits <= MAX_HITS:
 		# Show animation for current number of hits
 		$AnimatedSprite.play(str(hits))
+		Global.GameState.brick_hit()
 	else:
 		# Brick is completely destroyed
 		die()
@@ -35,6 +36,7 @@ func hit():
 
 func die():
 	dead = true
+	Global.GameState.brick_destroyed()
 	# Disable collider so we don't hit this brick again
 	$CollisionShape2D.disabled = true
 	# Choose between two die animations

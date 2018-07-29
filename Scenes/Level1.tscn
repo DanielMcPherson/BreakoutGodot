@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Walls/LeftWallTop.tscn" type="PackedScene" id=2]
@@ -13,6 +13,16 @@
 [ext_resource path="res://Scenes/Eyes.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/BottomTestWall.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Bricks.tscn" type="PackedScene" id=13]
+[ext_resource path="res://GFX/UI/panels/panel-320-480/sepia-panel-320-480-header.png" type="Texture" id=14]
+[ext_resource path="res://Fonts/candles_.ttf" type="DynamicFontData" id=15]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 48
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 15 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Level1" type="Node2D" index="0"]
 
@@ -21,6 +31,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Walls" type="Node2D" parent="." index="0"]
 
+editor/display_folded = true
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Transform" ]
 
@@ -241,5 +252,36 @@ scale = Vector2( 1.5, 1.5 )
 position = Vector2( -16, 0 )
 
 [node name="Bricks" parent="." index="4" instance=ExtResource( 13 )]
+
+[node name="Banner" type="Sprite" parent="." index="5"]
+
+position = Vector2( 496, 16 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Score" type="Label" parent="Banner" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -126.0
+margin_top = -21.0
+margin_right = 131.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.976562, 0.907898, 0.907898, 1 )
+text = "0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 
