@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Walls/LeftWallTop.tscn" type="PackedScene" id=2]
@@ -14,14 +14,15 @@
 [ext_resource path="res://Scenes/BottomTestWall.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Bricks.tscn" type="PackedScene" id=13]
 [ext_resource path="res://GFX/UI/panels/panel-320-480/sepia-panel-320-480-header.png" type="Texture" id=14]
-[ext_resource path="res://Fonts/candles_.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Scripts/ScoreBanner.gd" type="Script" id=15]
+[ext_resource path="res://Fonts/candles_.ttf" type="DynamicFontData" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 48
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 15 )
+font_data = ExtResource( 16 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Level1" type="Node2D" index="0"]
@@ -253,13 +254,14 @@ position = Vector2( -16, 0 )
 
 [node name="Bricks" parent="." index="4" instance=ExtResource( 13 )]
 
-[node name="Banner" type="Sprite" parent="." index="5"]
+[node name="ScoreBanner" type="Sprite" parent="." index="5"]
 
 position = Vector2( 496, 16 )
 texture = ExtResource( 14 )
+script = ExtResource( 15 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Score" type="Label" parent="Banner" index="0"]
+[node name="Score" type="Label" parent="ScoreBanner" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -283,5 +285,14 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Timer" type="Timer" parent="ScoreBanner" index="1"]
+
+process_mode = 1
+wait_time = 0.01
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="ScoreBanner/Timer" to="ScoreBanner" method="_on_Timer_timeout"]
 
 

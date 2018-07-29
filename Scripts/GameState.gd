@@ -1,24 +1,26 @@
 extends Node2D
 
 var score = 0
+var displayed_score = 0
 
 
 func _ready():
 	Global.GameState = self
 	$Paddle/Eyes.set_look_target($Ball)
 	score = 0
+	displayed_score = 0
+	update_score_ui();
 
 
 func _process(delta):
 	# Magic debug keystroke to destroy all bricks
 	if Input.is_action_pressed("ui_accept"):
 		get_tree().call_group("bricks", "die")
-	if Input.is_action_pressed("ui_up"):
-		Global.Ball.increase_speed(1.06)
 
 
 func update_score_ui():
-	$Banner/Score.text = str(score)
+	#$Banner/Score.text = str(displayed_score)
+	$ScoreBanner.set_score(score)
 
 
 func brick_hit():
