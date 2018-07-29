@@ -11,6 +11,10 @@ func _ready():
 	motion.x = SPEED / 2
 
 
+func increase_speed(multiplier):
+	motion *= multiplier
+
+
 func _physics_process(delta):
 	var collision_info = move_and_collide(motion)
 	if collision_info:
