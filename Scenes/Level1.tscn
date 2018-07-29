@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Walls/LeftWallTop.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Walls/TopWall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Walls/RightWallTop.tscn" type="PackedScene" id=4]
