@@ -2,6 +2,7 @@ extends Node2D
 
 var score = 0
 var displayed_score = 0
+var started = false
 
 
 func _ready():
@@ -9,14 +10,22 @@ func _ready():
 	$Paddle/Eyes.set_look_target($Ball)
 	score = 0
 	displayed_score = 0
+	started = false
+	$StartPrompt.visible = true
 	update_score_ui();
 
 
 func _process(delta):
 	# Magic debug keystroke to destroy all bricks
-	if Input.is_action_pressed("ui_accept"):
+	if Input.is_action_pressed("ui_down"):
 		get_tree().call_group("bricks", "die")
-
+	if not started:
+		if Input.is_action_pressed("ui_select"):
+			started = true
+			Global.Ball.start()
+			$StartPrompt.visible = false
+		else:
+			Global.Ball.position.x = Global.Paddle.position.x + 32
 
 func update_score_ui():
 	#$Banner/Score.text = str(displayed_score)

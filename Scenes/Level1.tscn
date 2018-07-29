@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Walls/LeftWallTop.tscn" type="PackedScene" id=2]
@@ -18,6 +18,14 @@
 [ext_resource path="res://Fonts/candles_.ttf" type="DynamicFontData" id=16]
 
 [sub_resource type="DynamicFont" id=1]
+
+size = 48
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 16 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
 
 size = 48
 use_mipmaps = false
@@ -233,9 +241,8 @@ collision_layer = 1
 
 [node name="Ball" parent="." index="1" instance=ExtResource( 9 )]
 
-position = Vector2( 500, 650 )
+position = Vector2( 528, 720 )
 scale = Vector2( 0.25, 0.25 )
-motion = Vector2( 0, 0 )
 
 [node name="Paddle" parent="." index="2" instance=ExtResource( 10 )]
 
@@ -256,6 +263,7 @@ position = Vector2( -16, 0 )
 
 [node name="ScoreBanner" type="Sprite" parent="." index="5"]
 
+editor/display_folded = true
 position = Vector2( 496, 16 )
 texture = ExtResource( 14 )
 script = ExtResource( 15 )
@@ -292,6 +300,29 @@ process_mode = 1
 wait_time = 0.01
 one_shot = false
 autostart = true
+
+[node name="StartPrompt" type="Label" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 528.0
+margin_right = 1024.0
+margin_bottom = 590.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Press Space"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 [connection signal="timeout" from="ScoreBanner/Timer" to="ScoreBanner" method="_on_Timer_timeout"]
 

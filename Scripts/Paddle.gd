@@ -15,6 +15,9 @@ func _ready():
 # The paddle's mood depends on how far away the ball is
 func check_mood():
 	var ball = Global.Ball
+	if not ball.started:
+		$Mouth.play("smile")
+		return
 	var dist = position.distance_to(ball.position)
 	var hdist = abs(position.x - ball.position.x)
 	# If ball is moving up, paddle is happy

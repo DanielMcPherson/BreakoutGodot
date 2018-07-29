@@ -3,12 +3,20 @@ extends KinematicBody2D
 const SPEED = 8
 
 export var motion = Vector2()
+export var started = false
 
 
 func _ready():
 	Global.Ball = self
-	motion.y = SPEED
+	motion.x = 0
+	motion.y = 0
+	started  = false
+
+
+func start():
+	motion.y = -SPEED
 	motion.x = SPEED / 2
+	started = true
 
 
 func increase_speed(multiplier):
@@ -16,6 +24,9 @@ func increase_speed(multiplier):
 
 
 func _physics_process(delta):
+	if not started:
+		$AnimatedSprite.play("default")
+		return
 	var collision_info = move_and_collide(motion)
 	if collision_info:
 		# Bounce off object we have collided with

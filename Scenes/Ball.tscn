@@ -3,48 +3,47 @@
 [ext_resource path="res://Scripts/Ball.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Balls/red/expresionless.png" type="Texture" id=2]
 [ext_resource path="res://GFX/Balls/red/expresionless_blink.png" type="Texture" id=3]
-[ext_resource path="res://GFX/Balls/red/smile_big.png" type="Texture" id=4]
-[ext_resource path="res://GFX/Balls/red/angry.png" type="Texture" id=5]
-[ext_resource path="res://GFX/Balls/red/confused.png" type="Texture" id=6]
-[ext_resource path="res://GFX/Balls/red/ashamed.png" type="Texture" id=7]
-[ext_resource path="res://GFX/Balls/red/surprised.png" type="Texture" id=8]
-[ext_resource path="res://GFX/Balls/red/smile.png" type="Texture" id=9]
-
+[ext_resource path="res://GFX/Balls/red/smile.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Balls/red/smile_big.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Balls/red/angry.png" type="Texture" id=6]
+[ext_resource path="res://GFX/Balls/red/confused.png" type="Texture" id=7]
+[ext_resource path="res://GFX/Balls/red/ashamed.png" type="Texture" id=8]
+[ext_resource path="res://GFX/Balls/red/surprised.png" type="Texture" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "big_smile",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "angry",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "confused",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "worried",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "smile",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "ashamed",
 "speed": 5.0
@@ -60,7 +59,7 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 124.0
 
-[node name="Ball" type="KinematicBody2D" index="0"]
+[node name="Ball" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -68,6 +67,8 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+motion = Vector2( 0, 0 )
+started = false
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
