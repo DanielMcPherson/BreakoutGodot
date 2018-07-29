@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+var main
 var hits = 0
 export var dead = false
 const MAX_HITS = 2
@@ -7,6 +8,17 @@ const MAX_HITS = 2
 
 func _ready():
 	randomize()
+	add_to_group("bricks")
+	reload()
+
+
+func reload():
+	dead = false
+	hits = 0
+	$CollisionShape2D.disabled = false
+	$AnimatedSprite.visible = true
+	$AnimatedSprite.play("0")
+	Global.num_bricks += 1
 
 
 # Called from ball script when brick has been hit by a ball
@@ -16,19 +28,25 @@ func hit():
 		# Show animation for current number of hits
 		$AnimatedSprite.play(str(hits))
 	else:
-		dead = true
 		# Brick is completely destroyed
-		# Disable collider so we don't hit this brick again
-		$CollisionShape2D.disabled = true
-		# Choose between two die animations
-		var animation = "die1"
-		if randi() % 100 > 49:
-			animation = "die2"
-		$AnimatedSprite.play(animation)
-		# Call function to delete brick after die animation finishes
-		$AnimatedSprite.connect("animation_finished", self, "die_animation_finished")
+		die()
+	return dead
+
+
+func die():
+	dead = true
+	# Disable collider so we don't hit this brick again
+	$CollisionShape2D.disabled = true
+	# Choose between two die animations
+	var animation = "die1"
+	if randi() % 100 > 49:
+		animation = "die2"
+	$AnimatedSprite.play(animation)
+	# Call function to delete brick after die animation finishes
+	$AnimatedSprite.connect("animation_finished", self, "die_animation_finished")
 
 
 # Delete brick object after die animation has finished
 func die_animation_finished():
-	queue_free()
+	$AnimatedSprite.visible = false
+	Global.num_bricks -= 1

@@ -3,21 +3,18 @@ extends KinematicBody2D
 const SPEED = 15
 
 var motion = Vector2()
-var ball
 var y_pos
 
 func _ready():
+	Global.Paddle = self
 	# Ball infrequently knocks paddle down
 	# Remember starting y position and don't let this happen
 	y_pos = position.y
 
 
-func set_ball(obj):
-	ball = obj
-
-
 # The paddle's mood depends on how far away the ball is
 func check_mood():
+	var ball = Global.Ball
 	var dist = position.distance_to(ball.position)
 	var hdist = abs(position.x - ball.position.x)
 	# If ball is moving up, paddle is happy

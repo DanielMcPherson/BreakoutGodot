@@ -3,15 +3,12 @@ extends KinematicBody2D
 const SPEED = 8
 
 export var motion = Vector2()
-var paddle
+
 
 func _ready():
+	Global.Ball = self
 	motion.y = SPEED
 	motion.x = SPEED / 2
-
-
-func set_paddle(obj):
-	paddle = obj
 
 
 func _physics_process(delta):
@@ -23,22 +20,27 @@ func _physics_process(delta):
 		var other = collision_info.collider
 		if "Brick" in other.get_name():
 			# Tell the brick it has been hit
-			other.hit()
+			var brick_destoryed = other.hit()
 			# Ball is happy about it
 			if other.position.y < position.y:
 				# Smile when hitting ball from below
-				if other.dead:
+				if brick_destoryed:
 					$AnimatedSprite.play("big_smile")
-					if paddle:
-						paddle.brick_smashed()
 				else:
 					$AnimatedSprite.play("smile")
 			else:
 				# Murderous glee when hitting ball from above
 				$AnimatedSprite.play("angry")
+			# Tell paddle if we smashed a brick
+			if brick_destoryed:
+				Global.Paddle.brick_smashed()
 		elif "Paddle" in other.get_name():
 			# Ball is happy
 			$AnimatedSprite.play("default")
+			# Tell global script we hit paddle
+			Global.ball_hit_top_or_paddle()
+		elif "TopWall" in other.get_name():
+			Global.ball_hit_top_or_paddle()
 	# Ball gets nervouse when falling down
 	if motion.y > 0:
 		# ToDo: Look worried if ball is below 650 and paddle is not close enough

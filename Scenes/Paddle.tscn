@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Scenes/Paddle.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Paddle.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Walls/yellow_brown/platform_left_edge.png" type="Texture" id=2]
 [ext_resource path="res://GFX/Walls/yellow_brown/platform_right_edge.png" type="Texture" id=3]
 [ext_resource path="res://GFX/Faces/smile_big_mouth.png" type="Texture" id=4]
@@ -8,6 +8,7 @@
 [ext_resource path="res://GFX/Faces/surprised_mouth.png" type="Texture" id=6]
 [ext_resource path="res://GFX/Faces/smile_mouth.png" type="Texture" id=7]
 [ext_resource path="res://GFX/Faces/frown_mouth.png" type="Texture" id=8]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 
