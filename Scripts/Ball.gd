@@ -41,10 +41,10 @@ func _physics_process(delta):
 		elif "Paddle" in other.get_name():
 			# Ball is happy
 			$AnimatedSprite.play("default")
-			# Tell global script we hit paddle
-			Global.ball_hit_top_or_paddle()
+			# Tell main script we hit paddle
+			Global.GameState.ball_hit_top_or_paddle()
 		elif "TopWall" in other.get_name():
-			Global.ball_hit_top_or_paddle()
+			Global.GameState.ball_hit_top_or_paddle()
 	# Ball gets nervouse when falling down
 	if motion.y > 0:
 		# ToDo: Look worried if ball is below 650 and paddle is not close enough
