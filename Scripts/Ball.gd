@@ -4,13 +4,19 @@ const SPEED = 8
 
 export var motion = Vector2()
 export var started = false
-
+var starting_position
 
 func _ready():
 	Global.Ball = self
+	starting_position = position
+	reset()
+
+
+func reset():
+	position = starting_position
 	motion.x = 0
 	motion.y = 0
-	started  = false
+	started = false
 
 
 func start():
@@ -56,6 +62,8 @@ func _physics_process(delta):
 			Global.GameState.ball_hit_top_or_paddle()
 		elif "TopWall" in other.get_name():
 			Global.GameState.ball_hit_top_or_paddle()
+		elif "BottomWall" in other.get_name():
+			Global.GameState.ball_hit_bottom()
 	# Ball gets nervouse when falling down
 	if motion.y > 0:
 		# ToDo: Look worried if ball is below 650 and paddle is not close enough

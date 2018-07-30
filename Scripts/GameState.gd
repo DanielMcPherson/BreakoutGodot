@@ -10,9 +10,8 @@ func _ready():
 	$Paddle/Eyes.set_look_target($Ball)
 	score = 0
 	displayed_score = 0
-	started = false
-	$StartPrompt.visible = true
-	update_score_ui();
+	update_score_ui()
+	reset()
 
 
 func _process(delta):
@@ -27,6 +26,7 @@ func _process(delta):
 		else:
 			Global.Ball.position.x = Global.Paddle.position.x + 32
 
+
 func update_score_ui():
 	#$Banner/Score.text = str(displayed_score)
 	$ScoreBanner.set_score(score)
@@ -40,6 +40,16 @@ func brick_hit():
 func brick_destroyed():
 	score += 50
 	update_score_ui()
+
+
+func reset():
+	started = false
+	$StartPrompt.visible = true
+
+
+func ball_hit_bottom():
+	Global.Ball.reset()
+	reset()
 
 
 func ball_hit_top_or_paddle():
