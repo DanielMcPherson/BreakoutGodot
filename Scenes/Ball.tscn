@@ -69,6 +69,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 motion = Vector2( 0, 0 )
 started = false
+lost = false
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 

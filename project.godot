@@ -20,7 +20,7 @@ Global="*res://Scripts/Global.gd"
 
 [display]
 
-window/size/height=900
+window/size/height=850
 
 [layer_names]
 

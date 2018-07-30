@@ -11,7 +11,7 @@ func _ready():
 	score = 0
 	displayed_score = 0
 	update_score_ui()
-	reset()
+	reset_ball()
 
 
 func _process(delta):
@@ -42,14 +42,18 @@ func brick_destroyed():
 	update_score_ui()
 
 
-func reset():
+func ball_hit_bottom():
+	$BallResetTimer.start()
+
+
+func _on_BallResetTimer_timeout():
+	reset_ball()
+
+
+func reset_ball():
+	Global.Ball.reset()
 	started = false
 	$StartPrompt.visible = true
-
-
-func ball_hit_bottom():
-	Global.Ball.reset()
-	reset()
 
 
 func ball_hit_top_or_paddle():
@@ -58,3 +62,4 @@ func ball_hit_top_or_paddle():
 	if Global.num_bricks <= 0:
 		get_tree().call_group("bricks", "reload")
 		Global.Ball.increase_speed(1.1)
+

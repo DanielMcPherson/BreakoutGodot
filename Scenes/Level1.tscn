@@ -243,6 +243,7 @@ collision_layer = 1
 
 position = Vector2( 528, 720 )
 scale = Vector2( 0.25, 0.25 )
+lost = false
 
 [node name="Paddle" parent="." index="2" instance=ExtResource( 10 )]
 
@@ -257,7 +258,9 @@ scale = Vector2( 1.5, 1.5 )
 
 [node name="BottomTestWall" parent="." index="3" instance=ExtResource( 12 )]
 
-position = Vector2( -16, 0 )
+position = Vector2( -512, 208 )
+scale = Vector2( 2, 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Bricks" parent="." index="4" instance=ExtResource( 13 )]
 
@@ -324,6 +327,15 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
+[node name="BallResetTimer" type="Timer" parent="." index="7"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = true
+autostart = false
+
 [connection signal="timeout" from="ScoreBanner/Timer" to="ScoreBanner" method="_on_Timer_timeout"]
+
+[connection signal="timeout" from="BallResetTimer" to="." method="_on_BallResetTimer_timeout"]
 
 
