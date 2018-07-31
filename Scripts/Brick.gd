@@ -9,6 +9,8 @@ const MAX_HITS = 2
 func _ready():
 	randomize()
 	add_to_group("bricks")
+		# Call function to delete brick after die animation finishes
+	$AnimatedSprite.connect("animation_finished", self, "die_animation_finished")
 	reload()
 
 
@@ -44,8 +46,6 @@ func die():
 	if randi() % 100 > 49:
 		animation = "die2"
 	$AnimatedSprite.play(animation)
-	# Call function to delete brick after die animation finishes
-	$AnimatedSprite.connect("animation_finished", self, "die_animation_finished")
 
 
 # Delete brick object after die animation has finished
