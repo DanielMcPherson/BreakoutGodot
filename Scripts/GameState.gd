@@ -3,6 +3,7 @@ extends Node2D
 var score = 0
 var displayed_score = 0
 var started = false
+var num_extra_balls = 3
 
 
 func _ready():
@@ -52,6 +53,8 @@ func _on_BallResetTimer_timeout():
 
 func reset_ball():
 	Global.Ball.reset()
+	num_extra_balls -= 1
+	$BallCountDisplay/BallCount.text = str(num_extra_balls)
 	started = false
 	$StartPrompt.visible = true
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Walls/LeftWallTop.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://GFX/UI/panels/panel-320-480/sepia-panel-320-480-header.png" type="Texture" id=14]
 [ext_resource path="res://Scripts/ScoreBanner.gd" type="Script" id=15]
 [ext_resource path="res://Fonts/candles_.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://GFX/Balls/red/expresionless.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -33,7 +34,15 @@ use_filter = false
 font_data = ExtResource( 16 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Level1" type="Node2D" index="0"]
+[sub_resource type="DynamicFont" id=3]
+
+size = 32
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 16 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Level1" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -243,7 +252,6 @@ collision_layer = 1
 
 position = Vector2( 528, 720 )
 scale = Vector2( 0.25, 0.25 )
-lost = false
 
 [node name="Paddle" parent="." index="2" instance=ExtResource( 10 )]
 
@@ -266,11 +274,10 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ScoreBanner" type="Sprite" parent="." index="5"]
 
-editor/display_folded = true
 position = Vector2( 496, 16 )
 texture = ExtResource( 14 )
 script = ExtResource( 15 )
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Score" type="Label" parent="ScoreBanner" index="0"]
 
@@ -333,6 +340,51 @@ process_mode = 1
 wait_time = 3.0
 one_shot = true
 autostart = false
+
+[node name="BallCountDisplay" type="Node2D" parent="." index="8"]
+
+position = Vector2( 950, 16 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Banner" type="Sprite" parent="BallCountDisplay" index="0"]
+
+scale = Vector2( 0.5, 1 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BallSprite" type="Sprite" parent="BallCountDisplay" index="1"]
+
+position = Vector2( -25.6248, 0 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 17 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BallCount" type="Label" parent="BallCountDisplay" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 12.0
+margin_top = -15.0
+margin_right = 52.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "3"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 [connection signal="timeout" from="ScoreBanner/Timer" to="ScoreBanner" method="_on_Timer_timeout"]
 
