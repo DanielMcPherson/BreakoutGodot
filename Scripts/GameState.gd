@@ -52,6 +52,8 @@ func _on_BallResetTimer_timeout():
 
 
 func reset_ball():
+	if num_extra_balls <= 0:
+		get_tree().change_scene(Global.game_over)
 	Global.Ball.reset()
 	num_extra_balls -= 1
 	$BallCountDisplay/BallCount.text = str(num_extra_balls)
