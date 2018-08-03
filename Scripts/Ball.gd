@@ -44,7 +44,8 @@ func _physics_process(delta):
 		motion = motion.bounce(collision_info.normal)
 		# See if the other object is a brick
 		var other = collision_info.collider
-		if "Brick" in other.get_name():
+#		if "Brick" in other.get_name():
+		if other.is_in_group("bricks"):
 			# Tell the brick it has been hit
 			var brick_destoryed = other.hit()
 			# Ball is happy about it
