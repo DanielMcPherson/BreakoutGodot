@@ -51,8 +51,10 @@ func _physics_process(delta):
 			if other.position.y < position.y:
 				# Smile when hitting ball from below
 				if brick_destoryed:
+					$Sounds/DestoryBrick.play()
 					$AnimatedSprite.play("big_smile")
 				else:
+					$Sounds/HitBrick.play()
 					$AnimatedSprite.play("smile")
 			else:
 				# Murderous glee when hitting ball from above
@@ -61,12 +63,15 @@ func _physics_process(delta):
 			if brick_destoryed:
 				Global.Paddle.brick_smashed()
 		elif "Paddle" in other.get_name():
+			$Sounds/PaddleSound.play()
 			# Ball is happy
 			$AnimatedSprite.play("default")
 			# Tell main script we hit paddle
 			Global.GameState.ball_hit_top_or_paddle()
-		elif "TopWall" in other.get_name():
-			Global.GameState.ball_hit_top_or_paddle()
+		elif "Wall" in other.get_name():
+			$Sounds/WallSound.play()
+			if "TopWall" in other.get_name():
+				Global.GameState.ball_hit_top_or_paddle()
 	# Ball gets nervouse when falling down
 	if motion.y > 0:
 		# ToDo: Look worried if ball is below 650 and paddle is not close enough
@@ -83,4 +88,5 @@ func _physics_process(delta):
 
 func _on_VisibilityNotifier2D_screen_exited():
 		Global.GameState.ball_hit_bottom()
+		$Sounds/LostBallSound.play()
 		lost = true

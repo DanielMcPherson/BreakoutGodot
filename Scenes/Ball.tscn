@@ -1,14 +1,19 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Ball.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Balls/red/expresionless.png" type="Texture" id=2]
 [ext_resource path="res://GFX/Balls/red/expresionless_blink.png" type="Texture" id=3]
 [ext_resource path="res://GFX/Balls/red/smile.png" type="Texture" id=4]
-[ext_resource path="res://GFX/Balls/red/smile_big.png" type="Texture" id=5]
-[ext_resource path="res://GFX/Balls/red/angry.png" type="Texture" id=6]
-[ext_resource path="res://GFX/Balls/red/confused.png" type="Texture" id=7]
-[ext_resource path="res://GFX/Balls/red/ashamed.png" type="Texture" id=8]
-[ext_resource path="res://GFX/Balls/red/surprised.png" type="Texture" id=9]
+[ext_resource path="res://GFX/Balls/red/angry.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Balls/red/confused.png" type="Texture" id=6]
+[ext_resource path="res://GFX/Balls/red/ashamed.png" type="Texture" id=7]
+[ext_resource path="res://GFX/Balls/red/surprised.png" type="Texture" id=8]
+[ext_resource path="res://GFX/Balls/red/smile_big.png" type="Texture" id=9]
+[ext_resource path="res://SFX/paddle.wav" type="AudioStream" id=10]
+[ext_resource path="res://SFX/Blip.wav" type="AudioStream" id=11]
+[ext_resource path="res://SFX/Explosion 3.wav" type="AudioStream" id=12]
+[ext_resource path="res://SFX/Explosion 17.wav" type="AudioStream" id=13]
+[ext_resource path="res://SFX/Fall.wav" type="AudioStream" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -18,22 +23,17 @@ animations = [ {
 "name": "default",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "big_smile",
-"speed": 2.0
-}, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "angry",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "confused",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "worried",
 "speed": 5.0
@@ -43,7 +43,7 @@ animations = [ {
 "name": "smile",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "ashamed",
 "speed": 5.0
@@ -52,6 +52,11 @@ animations = [ {
 "loop": true,
 "name": "blink",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "big_smile",
+"speed": 2.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
@@ -84,6 +89,53 @@ shape = SubResource( 2 )
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="2"]
 
 rect = Rect2( -10, -10, 20, 20 )
+
+[node name="Sounds" type="Node2D" parent="." index="3"]
+
+[node name="PaddleSound" type="AudioStreamPlayer" parent="Sounds" index="0"]
+
+stream = ExtResource( 10 )
+volume_db = -15.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="WallSound" type="AudioStreamPlayer" parent="Sounds" index="1"]
+
+stream = ExtResource( 11 )
+volume_db = -18.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="HitBrick" type="AudioStreamPlayer" parent="Sounds" index="2"]
+
+stream = ExtResource( 12 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="DestoryBrick" type="AudioStreamPlayer" parent="Sounds" index="3"]
+
+stream = ExtResource( 13 )
+volume_db = -6.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="LostBallSound" type="AudioStreamPlayer" parent="Sounds" index="4"]
+
+stream = ExtResource( 14 )
+volume_db = -12.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 
