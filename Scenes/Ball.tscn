@@ -59,7 +59,7 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 124.0
 
-[node name="Ball" type="KinematicBody2D"]
+[node name="Ball" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -80,5 +80,11 @@ animation = "default"
 
 visible = false
 shape = SubResource( 2 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="2"]
+
+rect = Rect2( -10, -10, 20, 20 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 
 

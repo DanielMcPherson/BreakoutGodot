@@ -67,10 +67,6 @@ func _physics_process(delta):
 			Global.GameState.ball_hit_top_or_paddle()
 		elif "TopWall" in other.get_name():
 			Global.GameState.ball_hit_top_or_paddle()
-		elif "BottomWall" in other.get_name():
-			Global.GameState.ball_hit_bottom()
-			if not Global.cheat_mode:
-				lost = true
 	# Ball gets nervouse when falling down
 	if motion.y > 0:
 		# ToDo: Look worried if ball is below 650 and paddle is not close enough
@@ -84,3 +80,7 @@ func _physics_process(delta):
 	# Make sure ball doesn't get stuck only moving horizontally
 	if abs(motion.y) < 2:
 		motion.y *= 1.1
+
+func _on_VisibilityNotifier2D_screen_exited():
+		Global.GameState.ball_hit_bottom()
+		lost = true
