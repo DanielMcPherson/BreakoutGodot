@@ -17,9 +17,9 @@ func _ready():
 func reload():
 	dead = false
 	hits = 0
+	$AnimatedSprite.play("0")
 	$CollisionShape2D.disabled = false
 	$AnimatedSprite.visible = true
-	$AnimatedSprite.play("0")
 	Global.num_bricks += 1
 
 
@@ -38,6 +38,7 @@ func hit():
 
 func die():
 	dead = true
+	Global.num_bricks -= 1
 	Global.GameState.brick_destroyed()
 	# Disable collider so we don't hit this brick again
 	$CollisionShape2D.disabled = true
@@ -50,5 +51,5 @@ func die():
 
 # Delete brick object after die animation has finished
 func die_animation_finished():
-	$AnimatedSprite.visible = false
-	Global.num_bricks -= 1
+	if dead:
+		$AnimatedSprite.visible = false
