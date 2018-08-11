@@ -390,7 +390,7 @@ _sections_unfolded = [ "custom_fonts" ]
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="9"]
 
 stream = ExtResource( 18 )
-volume_db = -6.0
+volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0

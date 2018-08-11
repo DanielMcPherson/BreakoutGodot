@@ -33,14 +33,23 @@ func update_score_ui():
 	$ScoreBanner.set_score(score)
 
 
-func brick_hit():
-	score += 10
+func increase_score(points):
+	var new_score = score + points
+	# Award extra balls at score milestones
+	var score_milestones = [ 500, 1000, 2500, 5000, 10000 ]
+	for milestone in score_milestones:
+		if score < milestone and new_score >= milestone:
+			change_ball_count(1)
+	score = new_score
 	update_score_ui()
+
+
+func brick_hit():
+	increase_score(10)
 
 
 func brick_destroyed():
-	score += 50
-	update_score_ui()
+	increase_score(50)
 
 
 func ball_hit_bottom():
@@ -51,12 +60,16 @@ func _on_BallResetTimer_timeout():
 	reset_ball()
 
 
+func change_ball_count(change):
+	num_extra_balls += change
+	$BallCountDisplay/BallCount.text = str(num_extra_balls)
+
+
 func reset_ball():
 	if num_extra_balls <= 0:
 		get_tree().change_scene(Global.game_over)
 	Global.Ball.reset()
-	num_extra_balls -= 1
-	$BallCountDisplay/BallCount.text = str(num_extra_balls)
+	change_ball_count(-1)
 	started = false
 	$StartPrompt.visible = true
 
