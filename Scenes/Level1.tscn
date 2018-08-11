@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Walls/LeftWallTop.tscn" type="PackedScene" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Fonts/candles_.ttf" type="DynamicFontData" id=16]
 [ext_resource path="res://GFX/Balls/red/expresionless.png" type="Texture" id=17]
 [ext_resource path="res://SFX/Pong Track.ogg" type="AudioStream" id=18]
+[ext_resource path="res://SFX/ExtraLife.wav" type="AudioStream" id=19]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -42,6 +43,37 @@ use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 16 )
 _sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "NewBall"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 2, 2 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 950, 16 ), Vector2( 882.474, 43.0103 ), Vector2( 950, 16 ) ]
+}
 
 [node name="Level1" type="Node2D" index="0"]
 
@@ -275,6 +307,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ScoreBanner" type="Sprite" parent="." index="5"]
 
+editor/display_folded = true
 position = Vector2( 496, 16 )
 texture = ExtResource( 14 )
 script = ExtResource( 15 )
@@ -387,12 +420,31 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="9"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BallCountDisplay" index="3"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/NewBall = SubResource( 4 )
+blend_times = [  ]
+
+[node name="Music" type="AudioStreamPlayer" parent="." index="9"]
 
 stream = ExtResource( 18 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="ExtraBall" type="AudioStreamPlayer" parent="." index="10"]
+
+stream = ExtResource( 19 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
 mix_target = 0
 bus = "Master"
 

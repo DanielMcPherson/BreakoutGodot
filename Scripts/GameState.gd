@@ -40,6 +40,8 @@ func increase_score(points):
 	for milestone in score_milestones:
 		if score < milestone and new_score >= milestone:
 			change_ball_count(1)
+			$ExtraBall.play()
+			$BallCountDisplay/AnimationPlayer.play("NewBall")
 	score = new_score
 	update_score_ui()
 
