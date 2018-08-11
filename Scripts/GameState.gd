@@ -48,13 +48,16 @@ func increase_score(points):
 
 func brick_hit():
 	increase_score(10)
+	$Camera.shake(.1, 0.8)
 
 
 func brick_destroyed():
 	increase_score(50)
+	$Camera.shake(.25, 1)
 
 
 func ball_hit_bottom():
+	$Camera.shake(2, 2)
 	$BallResetTimer.start()
 
 
