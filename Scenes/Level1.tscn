@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Walls/LeftWallTop.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Scripts/ScoreBanner.gd" type="Script" id=15]
 [ext_resource path="res://Fonts/candles_.ttf" type="DynamicFontData" id=16]
 [ext_resource path="res://GFX/Balls/red/expresionless.png" type="Texture" id=17]
+[ext_resource path="res://SFX/Pong Track.ogg" type="AudioStream" id=18]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -42,7 +43,7 @@ use_filter = false
 font_data = ExtResource( 16 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Level1" type="Node2D"]
+[node name="Level1" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -385,6 +386,15 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="9"]
+
+stream = ExtResource( 18 )
+volume_db = -6.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 [connection signal="timeout" from="ScoreBanner/Timer" to="ScoreBanner" method="_on_Timer_timeout"]
 

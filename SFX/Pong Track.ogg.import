@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Pong Track.ogg-77f4d90500f2c335bcfc97dd52ef52bb.oggstr"
+
+[deps]
+
+source_file="res://SFX/Pong Track.ogg"
+dest_files=[ "res://.import/Pong Track.ogg-77f4d90500f2c335bcfc97dd52ef52bb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
