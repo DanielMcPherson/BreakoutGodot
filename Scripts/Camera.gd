@@ -7,8 +7,6 @@ func _ready():
 
 
 func shake(duration, magnitude):
-	print(offset)
-	
 	var time = 0
 	while time < duration:
 		time += get_process_delta_time()
@@ -23,4 +21,3 @@ func shake(duration, magnitude):
 		pass
 		
 	set_offset(initial_offset)
-	print(get_offset())

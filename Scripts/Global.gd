@@ -10,5 +10,7 @@ var Ball
 var num_bricks = 0
 
 # Scenes
+var title = "res://Scenes/TitleScreen.tscn"
+var credits = "res://Scenes/Credits.tscn"
 var main_level = "res://Scenes/Level1.tscn"
 var game_over = "res://Scenes/GameOver.tscn"

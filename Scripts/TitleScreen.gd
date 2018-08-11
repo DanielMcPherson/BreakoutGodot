@@ -5,6 +5,7 @@ const INACTIVE_COLOR = "4a3e33"
 
 var play_selected = true
 
+
 func _ready():
 	play_selected = true
 	update_controls()
@@ -14,9 +15,11 @@ func _input(event):
 	if Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up"):
 		play_selected = not play_selected
 		update_controls()
-	if Input.is_action_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept"):
 		if play_selected:
 			get_tree().change_scene(Global.main_level)
+		else:
+			get_tree().change_scene(Global.credits)
 
 
 func update_controls():
