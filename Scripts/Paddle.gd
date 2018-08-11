@@ -40,6 +40,10 @@ func brick_smashed():
 	$Mouth.play("big_smile")
 
 
+func hit_ball():
+	$Particles2D.emitting = true
+
+
 func _physics_process(delta):
 	# Handle player input
 	motion.x = 0

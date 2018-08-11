@@ -1,40 +1,80 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Paddle.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Walls/yellow_brown/platform_left_edge.png" type="Texture" id=2]
 [ext_resource path="res://GFX/Walls/yellow_brown/platform_right_edge.png" type="Texture" id=3]
-[ext_resource path="res://GFX/Faces/smile_big_mouth.png" type="Texture" id=4]
-[ext_resource path="res://GFX/Faces/angry_mouth.png" type="Texture" id=5]
-[ext_resource path="res://GFX/Faces/surprised_mouth.png" type="Texture" id=6]
-[ext_resource path="res://GFX/Faces/smile_mouth.png" type="Texture" id=7]
+[ext_resource path="res://GFX/Faces/angry_mouth.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Faces/surprised_mouth.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Faces/smile_mouth.png" type="Texture" id=6]
+[ext_resource path="res://GFX/Faces/smile_big_mouth.png" type="Texture" id=7]
 [ext_resource path="res://GFX/Faces/frown_mouth.png" type="Texture" id=8]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="ParticlesMaterial" id=1]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 50, 1, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 0, -150, 0 )
+initial_velocity = 5.0
+initial_velocity_random = 0.0
+angular_velocity = 2.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.5
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 45.0
+angle_random = 1.0
+scale = 5.0
+scale_random = 0.0
+color = Color( 0.839844, 0.16275, 0.111542, 1 )
+hue_variation = 1.0
+hue_variation_random = 1.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Hue Variation", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Scale", "Spread", "Trail" ]
+
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 240, 96 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "big_smile",
+"name": "angry",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "angry",
+"name": "worried",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "worried",
+"name": "smile",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "smile",
+"name": "big_smile",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -43,36 +83,61 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Paddle" type="KinematicBody2D"]
+[node name="Paddle" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="Left" type="Sprite" parent="." index="0"]
+[node name="Particles2D" type="Particles2D" parent="." index="0"]
+
+position = Vector2( 0, -144 )
+scale = Vector2( 5, 5 )
+emitting = false
+amount = 20
+lifetime = 0.25
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 1 )
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Time", "Transform" ]
+
+[node name="Left" type="Sprite" parent="." index="1"]
 
 texture = ExtResource( 2 )
 offset = Vector2( -128, 0 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="Right" type="Sprite" parent="." index="1"]
+[node name="Right" type="Sprite" parent="." index="2"]
 
 texture = ExtResource( 3 )
 offset = Vector2( 128, 0 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
 visible = false
 position = Vector2( 0, -32 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="Mouth" type="AnimatedSprite" parent="." index="3"]
+[node name="Mouth" type="AnimatedSprite" parent="." index="4"]
 
 position = Vector2( 0, -16 )
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 animation = "smile"
 
 

@@ -68,6 +68,8 @@ func _physics_process(delta):
 			$AnimatedSprite.play("default")
 			# Tell main script we hit paddle
 			Global.GameState.ball_hit_top_or_paddle()
+			# Tell paddle we've hit it
+			Global.Paddle.hit_ball()
 		elif "Wall" in other.get_name():
 			$Sounds/WallSound.play()
 			if "TopWall" in other.get_name():
