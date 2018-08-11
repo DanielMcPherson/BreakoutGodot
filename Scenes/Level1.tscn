@@ -76,7 +76,7 @@ tracks/1/keys = {
 "values": [ Vector2( 950, 16 ), Vector2( 882.474, 43.0103 ), Vector2( 950, 16 ) ]
 }
 
-[node name="Level1" type="Node2D" index="0"]
+[node name="Level1" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
