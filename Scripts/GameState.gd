@@ -19,6 +19,9 @@ func _process(delta):
 	# Magic debug keystroke to destroy all bricks
 #	if Input.is_action_pressed("ui_down"):
 #		get_tree().call_group("bricks", "die")
+	# Debug: Pause game for screen shot
+#	if Input.is_key_pressed(KEY_Q):
+#		get_tree().paused = true
 	if not started:
 		if Input.is_action_pressed("ui_select"):
 			started = true
