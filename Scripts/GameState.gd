@@ -17,8 +17,8 @@ func _ready():
 
 func _process(delta):
 	# Magic debug keystroke to destroy all bricks
-	if Input.is_action_pressed("ui_down"):
-		get_tree().call_group("bricks", "die")
+#	if Input.is_action_pressed("ui_down"):
+#		get_tree().call_group("bricks", "die")
 	if not started:
 		if Input.is_action_pressed("ui_select"):
 			started = true
