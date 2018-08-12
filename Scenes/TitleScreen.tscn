@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Backgrounds/burst/burst_background_large_screen_blue.png" type="Texture" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://GFX/Bricks/red_brick/red_brick_state_1_right_side.png" type="Texture" id=16]
 [ext_resource path="res://GFX/Faces/confused.png" type="Texture" id=17]
 [ext_resource path="res://GFX/Faces/smile_big.png" type="Texture" id=18]
+[ext_resource path="res://SFX/TitleTrack.ogg" type="AudioStream" id=19]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -27,7 +28,7 @@ use_filter = false
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="TitleScreen" type="Node2D" index="0"]
+[node name="TitleScreen" type="Node2D"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -302,5 +303,14 @@ __meta__ = {
 
 visible = false
 texture = ExtResource( 18 )
+
+[node name="Music" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = ExtResource( 19 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 

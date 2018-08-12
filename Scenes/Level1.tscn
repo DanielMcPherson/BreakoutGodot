@@ -76,7 +76,7 @@ tracks/1/keys = {
 "values": [ Vector2( 950, 16 ), Vector2( 882.474, 43.0103 ), Vector2( 950, 16 ) ]
 }
 
-[node name="Level1" type="Node2D"]
+[node name="Level1" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -442,7 +442,7 @@ bus = "Master"
 [node name="ExtraBall" type="AudioStreamPlayer" parent="." index="10"]
 
 stream = ExtResource( 19 )
-volume_db = 0.0
+volume_db = -12.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
