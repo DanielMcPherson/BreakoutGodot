@@ -1,10 +1,17 @@
 # Godot Breakout
 Breakout game written in GDScript with the Godot game engine.
 
+Play it at https://chucklespmonkeyworth.itch.io/breakout
+
+or https://gotm.io/chucklespmonkeyworth/breakout
+
+ 
 <img src=GFX/BreakoutScreenshot.png>
 
 ## Credits
 All artwork is from https://www.gamedeveloperstudio.com/
+
+Programming and music by Daniel McPherson
 
 ## Usage
 Compile using the [Godot game engine](https://godotengine.org/).
