@@ -21,296 +21,159 @@
 [ext_resource path="res://SFX/TitleTrack.ogg" type="AudioStream" id=19]
 
 [sub_resource type="DynamicFont" id=1]
-
 size = 72
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 4 )
-_sections_unfolded = [ "Font", "Settings" ]
 
-[node name="TitleScreen" type="Node2D" index="0"]
-
+[node name="TitleScreen" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="TextureRect" type="TextureRect" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -384.0
 margin_right = 1024.0
 margin_bottom = 848.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 2 )
 expand = true
-stretch_mode = 0
 
-[node name="Play" type="CenterContainer" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Play" type="CenterContainer" parent="."]
 margin_top = 480.0
 margin_right = 1024.0
 margin_bottom = 576.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-use_top_left = false
 
-[node name="Sprite" type="Sprite" parent="Play" index="0"]
-
+[node name="Sprite" type="Sprite" parent="Play"]
 position = Vector2( 528, -48 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Label" type="Label" parent="Play" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Play"]
 margin_left = 431.0
 margin_top = 2.0
 margin_right = 592.0
 margin_bottom = 94.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.746094, 0.413098, 0.0903473, 1 )
 text = "Play"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="Credits" type="CenterContainer" parent="." index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Credits" type="CenterContainer" parent="."]
 margin_top = 592.0
 margin_right = 1024.0
 margin_bottom = 704.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-use_top_left = false
 
-[node name="Sprite" type="Sprite" parent="Credits" index="0"]
-
+[node name="Sprite" type="Sprite" parent="Credits"]
 position = Vector2( 528, -32 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Label" type="Label" parent="Credits" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Credits"]
 margin_left = 386.0
 margin_top = 10.0
 margin_right = 637.0
 margin_bottom = 102.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.292969, 0.245896, 0.200272, 1 )
 text = "Credits"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="Title" type="CenterContainer" parent="." index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Title" type="CenterContainer" parent="."]
 margin_top = 64.0
 margin_right = 1024.0
 margin_bottom = 156.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-use_top_left = false
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Label" type="Label" parent="Title" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Title"]
 margin_left = 251.0
 margin_right = 772.0
 margin_bottom = 92.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.839844, 0.249329, 0.290849, 1 )
 text = "Brick Breaker"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="Paddle" type="Node2D" parent="." index="4"]
-
+[node name="Paddle" type="Node2D" parent="."]
 position = Vector2( 608, 784 )
 scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Left" type="Sprite" parent="Paddle" index="0"]
-
+[node name="Left" type="Sprite" parent="Paddle"]
 texture = ExtResource( 5 )
 offset = Vector2( -128, 0 )
-_sections_unfolded = [ "Offset" ]
 
-[node name="Sprite" type="Sprite" parent="Paddle" index="1"]
-
+[node name="Sprite" type="Sprite" parent="Paddle"]
 texture = ExtResource( 6 )
 offset = Vector2( 128, 0 )
-_sections_unfolded = [ "Offset" ]
 
-[node name="Face" type="Sprite" parent="Paddle" index="2"]
-
+[node name="Face" type="Sprite" parent="Paddle"]
 position = Vector2( 0, -32 )
 texture = ExtResource( 7 )
 
-[node name="Ball" type="Sprite" parent="." index="5"]
-
+[node name="Ball" type="Sprite" parent="."]
 position = Vector2( 320, 400 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 8 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="Bricks" type="Node2D" parent="." index="6"]
-
+[node name="Bricks" type="Node2D" parent="."]
 position = Vector2( 0, 64 )
 
-[node name="BrickWorried" type="Sprite" parent="Bricks" index="0"]
-
-editor/display_folded = true
+[node name="BrickWorried" type="Sprite" parent="Bricks"]
 position = Vector2( 208, 176 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Smile" type="Sprite" parent="Bricks/BrickWorried" index="0"]
-
+[node name="Smile" type="Sprite" parent="Bricks/BrickWorried"]
 texture = ExtResource( 10 )
 
-[node name="Eyes" type="Sprite" parent="Bricks/BrickWorried" index="1"]
-
+[node name="Eyes" type="Sprite" parent="Bricks/BrickWorried"]
 texture = ExtResource( 11 )
 
-[node name="Left Eye" type="Sprite" parent="Bricks/BrickWorried" index="2"]
-
+[node name="Left Eye" type="Sprite" parent="Bricks/BrickWorried"]
 position = Vector2( -32, -32 )
 texture = ExtResource( 12 )
 
-[node name="Right Eye" type="Sprite" parent="Bricks/BrickWorried" index="3"]
-
+[node name="Right Eye" type="Sprite" parent="Bricks/BrickWorried"]
 position = Vector2( 64, -32 )
 texture = ExtResource( 13 )
 
-[node name="Brick Exploding" type="Sprite" parent="Bricks" index="1"]
-
+[node name="Brick Exploding" type="Sprite" parent="Bricks"]
 position = Vector2( 368, 192 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 14 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="Brick Exploding2" type="Sprite" parent="Bricks" index="2"]
-
+[node name="Brick Exploding2" type="Sprite" parent="Bricks"]
 visible = false
 position = Vector2( 720, 432 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 15 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="BrickSmile" type="Sprite" parent="Bricks" index="3"]
-
+[node name="BrickSmile" type="Sprite" parent="Bricks"]
 position = Vector2( 832, 240 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 16 )
-_sections_unfolded = [ "Transform", "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Smile" type="Sprite" parent="Bricks/BrickSmile" index="0"]
-
+[node name="Smile" type="Sprite" parent="Bricks/BrickSmile"]
 texture = ExtResource( 17 )
 
-[node name="BrickNormal" type="Sprite" parent="Bricks" index="4"]
-
-editor/display_folded = true
+[node name="BrickNormal" type="Sprite" parent="Bricks"]
 position = Vector2( 720, 240 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 16 )
-_sections_unfolded = [ "Transform", "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Smile" type="Sprite" parent="Bricks/BrickNormal" index="0"]
-
+[node name="Smile" type="Sprite" parent="Bricks/BrickNormal"]
 visible = false
 texture = ExtResource( 18 )
 
-[node name="Music" type="AudioStreamPlayer" parent="." index="7"]
-
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 19 )
-volume_db = 0.0
-pitch_scale = 1.0
 autoplay = true
-mix_target = 0
-bus = "Master"
-
-
